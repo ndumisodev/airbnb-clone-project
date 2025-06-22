@@ -60,7 +60,7 @@ By completing this project, you will:
 
 ---
 
-## 👥 Roles and Responsibilities
+## 👥 Project Roles and Responsibilities
 
 | Role              | Responsibilities |
 |-------------------|------------------|
