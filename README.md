@@ -31,6 +31,20 @@ The Airbnb Clone Project is a comprehensive full-stack application inspired by t
 
 ---
 
+## 🛠️ Technology Stack
+
+| Technology     | Purpose |
+|----------------|---------|
+| **Django**     | A Python web framework used for building RESTful APIs and managing server-side logic. |
+| **PostgreSQL** | A powerful open-source relational database system used to store and query application data. |
+| **GraphQL**    | An alternative to REST APIs for flexible and efficient data querying. |
+| **Docker**     | Containerization tool used to ensure consistent development and deployment environments. |
+| **GitHub Actions** | CI/CD automation platform used to build, test, and deploy code. |
+| **HTML/CSS/JS (React)** | Frontend technologies for building responsive and interactive user interfaces. |
+| **Figma**      | Design tool used for UI/UX planning and mockup creation. |
+
+---
+
 ## 🧑‍🎨 UI/UX Design Planning
 
 ### 🎯 Design Goals
