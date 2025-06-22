@@ -88,6 +88,141 @@ Identifying design properties like typography and color schemes ensures a consis
 
 ---
 
+
+## 👥 Team Roles
+
+### Project Manager
+Coordinates timelines, tracks progress, manages communication, and ensures delivery.
+
+### Backend Developer
+Builds and maintains server-side logic, APIs, and integrations using Django and related technologies.
+
+### Frontend Developer
+Implements user interfaces using HTML, CSS, JavaScript, and React, ensuring responsiveness and accessibility.
+
+### Database Administrator (DBA)
+Designs, maintains, and optimizes the PostgreSQL database schema.
+
+### DevOps Engineer
+Sets up Docker containers, CI/CD pipelines, and manages deployment environments.
+
+### Designer
+Creates UI/UX designs, maintains a consistent design system, and ensures usability.
+
+### QA/Test Engineer
+Writes and runs tests, reports bugs, and ensures the application meets functional and performance requirements.
+
+---
+
+## 🧱 Database Design
+
+### Key Entities & Fields:
+
+#### 1. **User**
+- `id` (PK)
+- `username`
+- `email`
+- `password_hash`
+- `role` (host or guest)
+
+#### 2. **Property**
+- `id` (PK)
+- `host_id` (FK → User)
+- `title`
+- `location`
+- `price_per_night`
+
+#### 3. **Booking**
+- `id` (PK)
+- `property_id` (FK → Property)
+- `guest_id` (FK → User)
+- `start_date`
+- `end_date`
+
+#### 4. **Review**
+- `id` (PK)
+- `property_id` (FK → Property)
+- `user_id` (FK → User)
+- `rating`
+- `comment`
+
+#### 5. **Payment**
+- `id` (PK)
+- `booking_id` (FK → Booking)
+- `amount`
+- `status`
+- `timestamp`
+
+### Entity Relationships:
+- A **User** can host multiple **Properties**.
+- A **User** can make multiple **Bookings**.
+- A **Property** can have multiple **Reviews**.
+- Each **Booking** has one **Payment**.
+
+---
+
+## 🧩 Feature Breakdown
+
+### 🔐 User Management
+Handles registration, login, profile updates, and role-based access (host vs guest).
+
+### 🏠 Property Management
+Allows hosts to create, update, and delete property listings with images, location, and pricing.
+
+### 📅 Booking System
+Enables users to book available properties with start/end dates, availability checks, and calendar integration.
+
+### 💳 Payment Processing
+Handles secure transactions with support for booking confirmations and payment status tracking.
+
+### 🗣️ Review System
+Allows users to leave ratings and comments on properties they’ve stayed in, fostering community trust.
+
+---
+
+## 🔐 API Security
+
+### Key Measures:
+- **Authentication**: Secure login using JWT or token-based authentication.
+- **Authorization**: Role-based access (e.g., only hosts can list properties).
+- **Rate Limiting**: Prevents abuse of public APIs.
+- **Input Validation**: Protects against SQL injection and XSS attacks.
+- **HTTPS**: Ensures encrypted communication over the network.
+
+### Importance:
+- **Protect user data** such as emails, passwords, and payment info.
+- **Prevent unauthorized access** to host-only or guest-only features.
+- **Secure transactions** during booking and payment processes.
+
+---
+
+## ⚙️ CI/CD Pipeline
+
+### What is CI/CD?
+CI/CD (Continuous Integration and Continuous Deployment) is a set of practices that allow teams to deliver code changes more frequently and reliably using automation.
+
+### Tools:
+- **GitHub Actions**: Automate build, test, and deployment steps.
+- **Docker**: Create reproducible containers for development and production environments.
+- **PostgreSQL Service**: For database tests in CI workflows.
+
+### Benefits:
+- Immediate feedback on code changes
+- Fewer bugs and deployment issues
+- Faster development lifecycle
+
+---
+
+## 📌 Manual Review
+
+This README is continuously updated as the project evolves. Team members are encouraged to:
+- Review each section for completeness and accuracy.
+- Follow structure and naming conventions.
+- Update role assignments and feature implementation details as development progresses.
+
+---
+
+
 ## 🧩 UI Component Patterns
 
 ### 🔼 Navbar
